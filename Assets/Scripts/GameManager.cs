@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
             isGameover = true;
             float usedTime = Time.time - startTime;
 
-            gameoverText.text = $"Name: {DataManager.Instance.PlayerName}\nAnimal: {playerObject.name}\nTime: {Mathf.Round(usedTime)}";
+            gameoverText.text = $"Name: {DataManager.Instance.PlayerName}\nAnimal: {DataManager.Instance.SelectedPrefab.name}\nTime: {Mathf.Round(usedTime)}";
             gameoverScreen.SetActive(true);
         }
     }
