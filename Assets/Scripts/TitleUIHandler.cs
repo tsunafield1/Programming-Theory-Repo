@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -10,6 +12,17 @@ public class TitleUIHandler : MonoBehaviour
 {
     [SerializeField] private GameObject catPrefab;
     [SerializeField] private GameObject birdPrefab;
+    [SerializeField] private TextMeshProUGUI highScoreText;
+
+    void Start()
+    {
+        highScoreText.text = $"{DataManager.Instance.highScoreName}\nAnimal: {DataManager.Instance.highScoreAnimal}\nTime: {DataManager.Instance.highScoreTime}";
+    }
+
+    public void OnEndEditName(string newName)
+    {
+        DataManager.Instance.PlayerName = newName;
+    }
 
     public void OnCatClicked()
     {

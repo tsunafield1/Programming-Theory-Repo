@@ -56,7 +56,8 @@ public class GameManager : MonoBehaviour
         if (numberOfCollectibles == maxCollectibles)
         {
             isGameover = true;
-            float usedTime = Time.time - startTime;
+            int usedTime = Mathf.RoundToInt(Time.time - startTime);
+            DataManager.Instance.SaveHighScore(usedTime);
 
             gameoverText.text = $"Name: {DataManager.Instance.PlayerName}\nAnimal: {DataManager.Instance.SelectedPrefab.name}\nTime: {Mathf.Round(usedTime)}";
             gameoverScreen.SetActive(true);
