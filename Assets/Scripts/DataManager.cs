@@ -12,7 +12,7 @@ public class DataManager : MonoBehaviour
     }
 
     private string playerName;
-    public string PlayerName
+    public string PlayerName // ENCAPSULATION
     {
         get { return playerName; }
         set
@@ -23,12 +23,12 @@ public class DataManager : MonoBehaviour
             }
         }
     }
-    public string highScoreName { get; private set; }
-    public string highScoreAnimal { get; private set; }
-    public int highScoreTime { get; private set; }
-    public static DataManager Instance { get; private set; }
+    public string highScoreName { get; private set; } // ENCAPSULATION
+    public string highScoreAnimal { get; private set; } // ENCAPSULATION
+    public int highScoreTime { get; private set; } // ENCAPSULATION
+    public static DataManager Instance { get; private set; } // ENCAPSULATION
     private GameObject selectedPrefab;
-    public GameObject SelectedPrefab
+    public GameObject SelectedPrefab // ENCAPSULATION
     {
         get { return selectedPrefab; }
         set

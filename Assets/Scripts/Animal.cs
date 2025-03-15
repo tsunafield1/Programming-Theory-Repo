@@ -1,10 +1,10 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(BoxCollider))]
-public abstract class Animal : MonoBehaviour
+public abstract class Animal : MonoBehaviour // ABSTRACTION
 {
     [SerializeField] protected float speed;
-    public float Speed
+    public float Speed // ENCAPSULATION
     {
         get { return speed; }
         set
@@ -16,7 +16,7 @@ public abstract class Animal : MonoBehaviour
         }
     }
     [SerializeField] protected float jumpForce;
-    public float JumpForce
+    public float JumpForce // ENCAPSULATION
     {
         get { return jumpForce; }
         set
@@ -30,20 +30,20 @@ public abstract class Animal : MonoBehaviour
     protected bool isJump;
     protected Rigidbody animalRb;
 
-    protected void Start()
+    protected void Start() // ABSTRACTION
     {
         animalRb = GetComponent<Rigidbody>();
     }
 
     // Check and move object every behaviour
-    public virtual void Move()
+    public virtual void Move() // ABSTRACTION
     {
         Walk();
         Jump();
     }
 
     // Control moving in x and z axis
-    protected virtual void Walk()
+    protected virtual void Walk() // ABSTRACTION
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
@@ -53,7 +53,7 @@ public abstract class Animal : MonoBehaviour
     }
 
     // Jump and set jump-state when press space key
-    protected virtual void Jump()
+    protected virtual void Jump() // ABSTRACTION
     {
         if (!isJump && Input.GetKeyDown(KeyCode.Space))
         {
@@ -63,7 +63,7 @@ public abstract class Animal : MonoBehaviour
     }
 
     // Reset jump-state when on ground
-    protected virtual void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter(Collision collision) // ABSTRACTION
     {
         if (collision.gameObject.CompareTag("Ground"))
         {

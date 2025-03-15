@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class Bird : Animal
+public class Bird : Animal // INHERITANCE
 {
     [SerializeField] private float flyForce;
-    public float FlyForce
+    public float FlyForce // ENCAPSULATION
     {
         get { return flyForce; }
         set
@@ -18,13 +18,13 @@ public class Bird : Animal
     private float doubleTapTime = 0.25f;
     private bool isFly;
 
-    public override void Move()
+    public override void Move() // POLYMORPHISM
     {
         Fly();
         base.Move();
     }
 
-    protected override void Jump()
+    protected override void Jump() // POLYMORPHISM
     {
         // Can jump only when not flying
         if (!isFly)
@@ -70,7 +70,7 @@ public class Bird : Animal
         }
     }
 
-    protected override void OnCollisionEnter(Collision collision)
+    protected override void OnCollisionEnter(Collision collision) // POLYMORPHISM
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
