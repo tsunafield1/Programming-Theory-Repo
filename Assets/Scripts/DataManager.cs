@@ -61,9 +61,9 @@ public class DataManager : MonoBehaviour
         if (newTime < highScoreTime)
         {
             SaveData data = new SaveData();
-            data.playerName = playerName;
-            data.animalName = selectedPrefab.name;
-            data.time = newTime;
+            data.playerName = highScoreName = playerName;
+            data.animalName = highScoreAnimal = selectedPrefab.name;
+            data.time = highScoreTime = newTime;
 
             string json = JsonUtility.ToJson(data);
             File.WriteAllText(Application.persistentDataPath + "/savedata.json", json);
