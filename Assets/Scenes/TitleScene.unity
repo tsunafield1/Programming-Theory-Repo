@@ -1558,8 +1558,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da99885acf9fc864583d3862e3cc7631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catPrefab: {fileID: 0}
-  birdPrefab: {fileID: 0}
+  catPrefab: {fileID: 6362262432965430894, guid: 9fd9a663800cc684fb3f32a8b36520c0, type: 3}
+  birdPrefab: {fileID: 52781486692896442, guid: 573c0c7badaa2ed46936b9c79dcae36d, type: 3}
 --- !u!1 &1809679932
 GameObject:
   m_ObjectHideFlags: 0
